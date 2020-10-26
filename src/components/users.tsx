@@ -1,5 +1,9 @@
 import React, { FC } from 'react';
 import { Container, Table } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
+import velazquez from '../velazquez.jpg';
+
+const users = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const Users: FC = () => {
   return (
@@ -13,26 +17,22 @@ const Users: FC = () => {
               <th>First Name</th>
               <th>Last Name</th>
               <th>Username</th>
+              <th>Skills</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {users.map((user) => (
+              <tr key={user}>
+                <td>1</td>
+                <td>
+                  <Image width={50} height={50} src={velazquez} roundedCircle />
+                  Mark
+                </td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Front End</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </Container>

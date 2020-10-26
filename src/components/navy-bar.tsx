@@ -3,12 +3,13 @@ import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Styles = styled.div`
+export const Styles = styled.div`
   a,
   .navbar-brand,
   .navbar-nav,
   .nav-link {
     color: #adb1b8;
+    padding: 0px;
     &:hover {
       color: white;
     }
@@ -24,7 +25,13 @@ const NavyBar: FC = () => {
   return (
     <div>
       <Styles>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          variant="dark"
+          fixed="top"
+        >
           <Navbar.Brand>React Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -40,10 +47,10 @@ const NavyBar: FC = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Button variant="primary" className="mr-2" onClick={handleShow}>
+              <Button variant="secondary" className="mr-2" onClick={handleShow}>
                 Log In
               </Button>
-              <Button variant="primary" onClick={handleShow}>
+              <Button variant="secondary" onClick={handleShow}>
                 Sign Out
               </Button>
             </Nav>
