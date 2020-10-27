@@ -37,8 +37,7 @@ const Home: FC = () => {
             <img src={house} height={400} alt={house} />
           </Col>
           <Col md={5}>
-            <h2>React Bootstrap</h2>
-            <h2>React Bootstrap</h2>
+            <>React Bootstrap</>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id
               libero ratione, laborum ipsa itaque voluptate quasi beatae quod
