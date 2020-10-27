@@ -5,6 +5,7 @@ import {
   Card,
   Col,
   Container,
+  Nav,
   OverlayTrigger,
   Row,
   Table,
@@ -13,8 +14,16 @@ import {
 import Image from 'react-bootstrap/Image';
 import velazquez from '../velazquez.jpg';
 import sky from '../sky.jpg';
+import water from '../water.jpg';
 import Tosting from './toast';
+import {
+  TiSocialFacebook,
+  TiSocialGithub,
+  TiSocialLinkedin,
+  TiSocialTwitter,
+} from 'react-icons/ti';
 
+const cards = [1, 2, 3];
 const About: FC = () => {
   return (
     <div>
@@ -92,9 +101,71 @@ const About: FC = () => {
             <Accordion defaultActiveKey="0">
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                  About me!
+                  Our Team
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
+                  <Card.Body style={{ backgroundColor: 'rgb(33, 37, 41)' }}>
+                    <Row>
+                      {cards.map((card) => (
+                        <Col>
+                          <Card
+                            style={{ width: '18rem', margin: '1rem' }}
+                            key={card}
+                          >
+                            <Card.Img variant="top" src={water} />
+                            <Card.Body>
+                              <Card.Title className="text-center">
+                                John Doe
+                              </Card.Title>
+                              <Card.Text>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Recusandae iusto assumenda
+                                officiis in perspiciatis, placeat optio aperiam,
+                                saepe numquam vero.
+                              </Card.Text>
+                              <Nav className="flex-row ">
+                                <Nav.Link
+                                  href="https://github.com/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <TiSocialGithub size={25} />
+                                </Nav.Link>
+                                <Nav.Link
+                                  href="http://linkedin.com/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <TiSocialLinkedin size={25} />
+                                </Nav.Link>
+                                <Nav.Link
+                                  href="https://www.facebook.com/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <TiSocialFacebook size={25} />
+                                </Nav.Link>
+                                <Nav.Link
+                                  href="http://twitter.com/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <TiSocialTwitter size={25} />
+                                </Nav.Link>
+                              </Nav>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
+                  About me!
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="1">
                   <Card.Body style={{ backgroundImage: `url(${sky})` }}>
                     <Row>
                       <Col md={6}>
@@ -131,14 +202,6 @@ const About: FC = () => {
                       </Col>
                     </Row>
                   </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
-                  Click me!
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="1">
-                  <Card.Body>Hello! I'm another body</Card.Body>
                 </Accordion.Collapse>
               </Card>
             </Accordion>
