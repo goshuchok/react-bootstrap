@@ -25,7 +25,13 @@ const Users: FC = () => {
               <tr key={user}>
                 <td>1</td>
                 <td>
-                  <Image width={50} height={50} src={velazquez} roundedCircle />
+                  <Image
+                    width={50}
+                    height={50}
+                    src={velazquez}
+                    roundedCircle
+                    className="mr-2"
+                  />
                   Mark
                 </td>
                 <td>Otto</td>

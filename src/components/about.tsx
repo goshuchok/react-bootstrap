@@ -5,7 +5,6 @@ import {
   Card,
   Col,
   Container,
-  Nav,
   OverlayTrigger,
   Row,
   Table,
@@ -13,17 +12,11 @@ import {
 } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import velazquez from '../velazquez.jpg';
-import sky from '../sky.jpg';
-import water from '../water.jpg';
-import Tosting from './toast';
-import {
-  TiSocialFacebook,
-  TiSocialGithub,
-  TiSocialLinkedin,
-  TiSocialTwitter,
-} from 'react-icons/ti';
+import nature from '../nature.jpg';
 
-const cards = [1, 2, 3];
+import Tosting from './toast';
+import CardsTeam from './cards';
+
 const About: FC = () => {
   return (
     <div>
@@ -98,66 +91,14 @@ const About: FC = () => {
         </Col>
         <Col md={12}>
           <Container>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0" className="mb-4">
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
                   Our Team
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body style={{ backgroundColor: 'rgb(33, 37, 41)' }}>
-                    <Row>
-                      {cards.map((card) => (
-                        <Col>
-                          <Card
-                            style={{ width: '18rem', margin: '1rem' }}
-                            key={card}
-                          >
-                            <Card.Img variant="top" src={water} />
-                            <Card.Body>
-                              <Card.Title className="text-center">
-                                John Doe
-                              </Card.Title>
-                              <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Recusandae iusto assumenda
-                                officiis in perspiciatis, placeat optio aperiam,
-                                saepe numquam vero.
-                              </Card.Text>
-                              <Nav className="flex-row ">
-                                <Nav.Link
-                                  href="https://github.com/"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <TiSocialGithub size={25} />
-                                </Nav.Link>
-                                <Nav.Link
-                                  href="http://linkedin.com/"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <TiSocialLinkedin size={25} />
-                                </Nav.Link>
-                                <Nav.Link
-                                  href="https://www.facebook.com/"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <TiSocialFacebook size={25} />
-                                </Nav.Link>
-                                <Nav.Link
-                                  href="http://twitter.com/"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <TiSocialTwitter size={25} />
-                                </Nav.Link>
-                              </Nav>
-                            </Card.Body>
-                          </Card>
-                        </Col>
-                      ))}
-                    </Row>
+                    <CardsTeam />
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -166,7 +107,7 @@ const About: FC = () => {
                   About me!
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="1">
-                  <Card.Body style={{ backgroundImage: `url(${sky})` }}>
+                  <Card.Body style={{ backgroundImage: `url(${nature})` }}>
                     <Row>
                       <Col md={6}>
                         <Card style={{ width: '18rem' }}>
@@ -199,6 +140,22 @@ const About: FC = () => {
                       </Col>
                       <Col md={6}>
                         <Tosting />
+                        <p className="mt-3" style={{ color: '#fff' }}>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Itaque quisquam cumque quasi accusantium
+                          commodi. Quasi minus in exercitationem culpa doloribus
+                          consequatur voluptas nulla perferendis sint est,
+                          inventore sit beatae alias. Ipsa, voluptates? Sequi
+                          quibusdam dicta, similique architecto, incidunt et
+                          assumenda, officia accusantium impedit fugiat ipsam.
+                          Ipsum, cupiditate sint. Earum voluptatem ut eligendi
+                          vero nisi temporibus at enim perspiciatis, natus
+                          quibusdam. Consectetur ipsa iusto veritatis earum
+                          suscipit, harum eaque commodi officia aspernatur
+                          perspiciatis ex sunt voluptates cum sit repellendus
+                          error ratione rem consequuntur necessitatibus ipsum,
+                          enim voluptate modi omnis! Non, assumenda.
+                        </p>
                       </Col>
                     </Row>
                   </Card.Body>
